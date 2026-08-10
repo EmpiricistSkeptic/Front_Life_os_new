@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const fmt = (v: number, d = 1) => (Number.isFinite(v) ? v.toFixed(d) : "—");
 
@@ -6,12 +6,6 @@ function scoreColor(v: number) {
   if (v >= 70) return "#00ff88";
   if (v >= 45) return "#ffcc00";
   return "#ff3366";
-}
-
-function scoreGlow(v: number) {
-  if (v >= 70) return "rgba(0,255,136,.4)";
-  if (v >= 45) return "rgba(255,204,0,.4)";
-  return "rgba(255,51,102,.4)";
 }
 
 // ── bar ───────────────────────────────────────────────────────────────────────
