@@ -15,7 +15,7 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
   const user = getCurrentUser();
   // Если пользователя нет (нет токена/данных), выкидываем на страницу входа
   if (!user) {
-    return <Navigate to="/register" replace />;
+    return <Navigate to="/login" replace />;
   }
   // Иначе рендерим защищенный компонент
   return <>{children}</>;
