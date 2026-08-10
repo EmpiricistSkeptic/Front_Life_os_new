@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Укажи здесь базовый URL твоего API.
 // Если Django крутится на другом порту, просто поменяй 8000 на нужный.
-const API_URL = "http://localhost:8000/api/";
+const API_URL = "https://life-os-257m.onrender.com/api/";
 
 const api = axios.create({
   baseURL: API_URL,
