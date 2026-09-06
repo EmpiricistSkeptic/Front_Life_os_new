@@ -12,12 +12,12 @@ import {
 } from "./aiShared";
 
 async function fetchConversation(id: string): Promise<ConversationSummary> {
-  const res = await api.get(`/ai/conversation/${id}/`);
+  const res = await api.get(`/conversation/${id}/`);
   return res.data;
 }
 
 async function fetchConversationMessages(id: string): Promise<ChatMessage[]> {
-  const res = await api.get(`/ai/conversation/${id}/messages/`);
+  const res = await api.get(`/conversation/${id}/messages/`);
   const data: ChatMessage[] = res.data.results ?? res.data;
   return [...data].sort(
     (a, b) => new Date(a.created_at ?? 0).getTime() - new Date(b.created_at ?? 0).getTime()
@@ -30,7 +30,7 @@ async function sendConversationMessage(
   report_type: ReportType,
   payload: Record<string, any> = {}
 ): Promise<{ user_message: ChatMessage; ai_message: ChatMessage }> {
-  const res = await api.post(`/ai/conversation/${id}/send_message/`, {
+  const res = await api.post(`/conversation/${id}/send_message/`, {
     content,
     report_type,
     payload,

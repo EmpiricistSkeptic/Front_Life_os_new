@@ -5,12 +5,12 @@ import type { ConversationSummary } from "./aiShared";
 import { HUD_STYLES, CornerHUD, timeAgo } from "./aiShared";
 
 async function fetchConversations(): Promise<ConversationSummary[]> {
-  const res = await api.get("/ai/conversation/");
+  const res = await api.get("/conversation/");
   return res.data.results ?? res.data;
 }
 
 async function createConversation(): Promise<ConversationSummary> {
-  const res = await api.post("/ai/conversation/", {});
+  const res = await api.post("/conversation/", {});
   return res.data;
 }
 
@@ -36,7 +36,7 @@ export default function AIConversations() {
     setError(null);
     try {
       const conv = await createConversation();
-      navigate(`/ai/conversations/${conv.id}`);
+      navigate(`/conversations/${conv.id}`);
     } catch {
       setError("COULD NOT START A NEW CONVERSATION");
       setCreating(false);
