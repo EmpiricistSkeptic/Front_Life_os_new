@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
-import {
-  ConversationSummary,
-  HUD_STYLES,
-  CornerHUD,
-  timeAgo,
-} from "./aiShared";
+import type { ConversationSummary } from "./aiShared";
+import { HUD_STYLES, CornerHUD, timeAgo } from "./aiShared";
 
 async function fetchConversations(): Promise<ConversationSummary[]> {
   const res = await api.get("/ai/conversation/");

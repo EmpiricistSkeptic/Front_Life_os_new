@@ -1,11 +1,9 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
+import type { CSSProperties } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import api from "../services/api";
+import type { ChatMessage, Domain, ReportType, ConversationSummary } from "./aiShared";
 import {
-  ChatMessage,
-  Domain,
-  ReportType,
-  ConversationSummary,
   QUICK_ACTIONS,
   HUD_STYLES,
   CornerHUD,
@@ -188,7 +186,7 @@ export default function AIConversation() {
                       "--btn-color": action.color,
                       "--btn-glow": action.glow,
                       border: `1px solid ${action.border}`,
-                    } as React.CSSProperties}
+                    } as CSSProperties}
                     onClick={() => handleQuickAction(action)}>
                     <span className="sl-ai-quick-icon">{action.icon}</span>
                     <span className="sl-ai-quick-label">{action.label}</span>
