@@ -673,7 +673,7 @@ export default function Dashboard() {
               <div className="sl-user-dot" />
               <span className="sl-user-name">[ {user?.username?.toUpperCase() ?? "—"} ]</span>
             </div>
-            <button className="sl-ai-btn" onClick={() => navigate("/assistant")}>
+            <button className="sl-ai-btn" onClick={() => navigate("/ai/conversations")}>
               ✦ A.I. SYSTEM
             </button>
             <button className="sl-logout-btn" onClick={() => logout().then(() => navigate("/login"))}>
