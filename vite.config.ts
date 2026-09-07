@@ -27,8 +27,9 @@ export default defineConfig({
         display: "standalone",
         orientation: "portrait",
 
-        theme_color: "#00AAFF",
-        background_color: "#0D1B2A",
+        // LifeOS neon blue theme
+        theme_color: "#008CFF",
+        background_color: "#030817",
 
         icons: [
           {

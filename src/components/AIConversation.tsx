@@ -159,6 +159,7 @@ export default function AIConversation() {
               <div className="sl-ai-sub">▸ DEEPSEEK NEURAL INTERFACE · LIFE OS v2.0</div>
             </div>
           </div>
+          {/* Явный переход на список диалогов — не зависит от истории браузера */}
           <button className="sl-ai-back" onClick={() => navigate("/ai/conversations")}>
             ◁ CONVERSATIONS
           </button>
